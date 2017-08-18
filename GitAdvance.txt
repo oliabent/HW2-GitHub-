@@ -1,0 +1,33 @@
+1. Робота з бренчами
+git checkout -b architecture
+mkdir uploads
+mkdir assets
+touch index.txt
+echo "Hello:)" > index.txt
+git add .
+git status
+git commit -m " task 1 create branch 'arhitecture' and add file sustem there"
+git push -u origin architecture
+cd assets
+touch all.js
+touch css.js
+git add .
+git commit -m " add 'assets/all.js' and 'assets/css.js'"
+git push
+cd ..
+touch .gitignore
+echo "uploads/" > .gitignore
+git add .
+git commit -m " add .gitigmore file"
+git push
+git checkout master
+git merge architecture
+git branch -D architecture
+
+222222222222222222222222222222222222222222
+5555555555555555555555555555555555555555555
+git checkout -b gh-pages
+touch index.html
+echo "Hello" > index.html
+
+

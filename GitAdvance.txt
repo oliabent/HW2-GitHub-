@@ -1,4 +1,4 @@
-1. Робота з бренчами
+1. Р РѕР±РѕС‚Р° Р· Р±СЂРµРЅС‡Р°РјРё
 git checkout -b architecture
 mkdir uploads
 mkdir assets
@@ -24,10 +24,22 @@ git checkout master
 git merge architecture
 git branch -D architecture
 
-222222222222222222222222222222222222222222
-5555555555555555555555555555555555555555555
+
+
+5.Git Pages
+
 git checkout -b gh-pages
 touch index.html
 echo "Hello" > index.html
+git add .
+git commit -m "add index.html with "Hello" word"
+git push -u origin gh-pages
+echo "World" >> index.html
+git add .
+git commit -m "add "World" word to index.html"
+git push
+
+
+---checked https://oliabent.github.io/6-vcs-advanced/---
 
 

@@ -24,7 +24,47 @@ git checkout master
 git merge architecture
 git branch -D architecture
 
+2.Rebase
+git branch branch2
+git branch
+cd assets
+touch index.js
+git add .
+git commit -m "create index.js"
+touch index.txt
+echo hello > index.txt
+git add .
+git commit -m "create index.txt with 'hello' word"
+git checkout branch2
+git rebase master
+touch 1.txt
+git add .
+git commit -m " create 1.txt file"
+git checkout master
+git merge branch2
+git branch -d branch2
+git push
 
+3.Tag
+
+rm all.js
+touch index.html
+echo bla-bla-bla > index.html
+git add .
+git commit -m "delate all.js, create index.html"
+rm 1.txt
+rm css.js
+git add .
+git commit -m "delete 1.txt and css.js"
+git tag -a v1.0 -m "my first tag"
+git push
+
+4.Submodule
+
+git submodule add https://github.com/oliabent/6-vcs-advanced.git task4
+git status
+git commit -m "added new submodule"
+git push
 
 5.Git Pages
 
@@ -41,5 +81,27 @@ git push
 
 
 ---checked https://oliabent.github.io/6-vcs-advanced/---
+
+6.Conflict 
+echo "some text" >> index.txt
+git add .
+git commit -m " add some  text to index.txt"
+git push
+git checkout -b olia
+git status
+git add .
+git commit -m "updated file.txt "
+git push -u origin olia
+git checkout master
+git merge olia
+	Auto-merging index.txt
+CONFLICT (content): Merge conflict in index.txt
+Automatic merge failed; fix conflicts and then commit the result.
+git merge --abort
+git add .
+git commit -m" pofixala conflict =) "
+git push
+git checkout olia
+git merge master
 
 
